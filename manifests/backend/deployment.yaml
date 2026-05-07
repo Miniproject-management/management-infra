@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: backend-sa
-  namespace: sample-app
+  namespace: miniproject-management
   annotations:
     eks.amazonaws.com/role-arn: ${BACKEND_SA_ROLE_ARN}
 ---
@@ -10,11 +10,11 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: backend-secret
-  namespace: sample-app
+  namespace: miniproject-management
 type: Opaque
 stringData:
-  S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }} #"sample-app-dev-files-805400277714"
-  SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }} #"jdbc:mysql://sample-app-mysql.c504k660kyuf.us-east-2.rds.amazonaws.com:3306/mydb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
+  S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }} #"miniproject-management-dev-files-805400277714"
+  SPRING_DATASOURCE_URL: ${{ secrets.SPRING_DATASOURCE_URL }} #"jdbc:mysql://miniproject-management-mysql.c504k660kyuf.us-east-2.rds.amazonaws.com:3306/mydb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8"
   SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }} #"admin"
   SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }} #"your-strong-password-here"
 ---
@@ -22,7 +22,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: sample-app
+  namespace: miniproject-management
 spec:
   replicas: 2
   selector:
@@ -89,7 +89,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: backend-service
-  namespace: sample-app
+  namespace: miniproject-management
 spec:
   type: ClusterIP
   selector:
