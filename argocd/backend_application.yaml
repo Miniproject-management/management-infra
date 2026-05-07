@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     # 백엔드 GitHub 리포지토리 주소
-    repoURL: 'https://github.com/kimgeon0802/AWS_EKS_infra.git'
+    repoURL: 'https://github.com/Miniproject-management/management-infra.git'
     targetRevision: HEAD
     # 리포지토리 내의 매니페스트 파일 경로 (루트 폴더일 경우 '.')
     path: 'manifests/backend'
