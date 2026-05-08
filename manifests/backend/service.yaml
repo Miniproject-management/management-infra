@@ -5,6 +5,7 @@ metadata:
   namespace: miniproject-management
 spec:
   type: ClusterIP
+  kind: Ingress
   selector:
     app: backend
   ports:
