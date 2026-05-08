@@ -41,7 +41,7 @@ spec:
       serviceAccountName: backend-sa
       containers:
         - name: backend
-          image: 
+          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/backend:3a8290a2a2227ca41b375480d845337cb357cdbf
           ports:
             - containerPort: 8080
           env:
