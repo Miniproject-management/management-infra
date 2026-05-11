@@ -5,5 +5,4 @@ namespace: miniproject-management
 
 resources:
   - deployment.yaml
-  - secret.yaml
   - namespace.yaml
