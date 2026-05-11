@@ -40,6 +40,10 @@ spec:
           ports:
             - containerPort: 8080
 
+          envFrom:
+          - configMapRef:
+              name: backend-config
+
           env:
             - name: S3_BUCKET_NAME
               valueFrom:

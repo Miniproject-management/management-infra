@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: backend-config
+  namespace: miniproject-management
+
+data:
+  SPRING_PROFILES_ACTIVE: prod
+
+  SERVER_PORT: "8080"
+
+  OCR_SERVICE_URL: http://document-analyzer-service:8000
+
+  LOG_LEVEL: INFO
