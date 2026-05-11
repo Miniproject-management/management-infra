@@ -34,7 +34,7 @@ spec:
 
           envFrom:
             - configMapRef:
-                name: document-analyzer-config
+                name: backend-config
 
           env:
             - name: AWS_REGION
