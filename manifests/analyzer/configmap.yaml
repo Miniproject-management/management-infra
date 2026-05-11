@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 
 metadata:
-  name: backend-config
+  name: document-analyzer-config
   namespace: miniproject-management
 
 data:
