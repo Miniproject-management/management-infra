@@ -51,6 +51,12 @@ spec:
                   name: backend-secret
                   key: S3_BUCKET_NAME
 
+            - name: GOOGLE_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: GOOGLE_API_KEY
+
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 secretKeyRef:
