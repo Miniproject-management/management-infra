@@ -10,8 +10,6 @@ data:
 
   SERVER_PORT: "8080"
 
-  OCR_SERVICE_URL: http://backend-service:8000
-
   LOG_LEVEL: INFO
 
   GEMINI_MODEL: gemini-2.5-flash
