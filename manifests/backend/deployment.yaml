@@ -36,7 +36,7 @@ spec:
 
       containers:
         - name: backend
-          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/backend:118adb320b5c46a711d31a622e968699d608726b
+          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/backend:ca316033339cf7af62b94173b7556c74b8b9e1c8
           ports:
             - containerPort: 8080
 
