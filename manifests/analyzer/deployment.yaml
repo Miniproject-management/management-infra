@@ -46,6 +46,22 @@ spec:
                   name: backend-secret
                   key: S3_BUCKET_NAME
 
+            # 추가
+            - name: DB_URL
+              value: jdbc:mysql://miniproject-management-mysql-2team.c3owgi2swfvk.ap-northeast-2.rds.amazonaws.com:3306/mydb?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: DB_USERNAME
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: DB_PASSWORD
+
           resources:
             requests:
               memory: "512Mi"
