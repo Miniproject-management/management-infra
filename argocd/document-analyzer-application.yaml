@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: "https://github.com/Miniproject-management/management-infra.git"
     targetRevision: main
-    path: manifests/analyzer
+    path: 'manifests/analyzer'
 
   destination:
     server: 'https://kubernetes.default.svc'
