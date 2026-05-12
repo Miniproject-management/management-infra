@@ -57,6 +57,10 @@ spec:
                   name: backend-secret
                   key: GOOGLE_API_KEY
 
+            # ConfigMap의 GEMINI_MODEL 보다 우선 (구버전 1.5 고정값 방지)
+            - name: GEMINI_MODEL
+              value: "gemini-2.5-flash"
+
             - name: SPRING_DATASOURCE_URL
               valueFrom:
                 secretKeyRef:

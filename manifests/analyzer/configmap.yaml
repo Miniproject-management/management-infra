@@ -13,3 +13,5 @@ data:
   OCR_SERVICE_URL: http://document-analyzer-service:8000
 
   LOG_LEVEL: INFO
+
+  GEMINI_MODEL: gemini-2.5-flash
