@@ -18,6 +18,9 @@ spec:
         app: document-analyzer
 
     spec:
+      # backend 와 동일 IRSA — IAM Trust 가 backend-sa 기준이면 analyzer 도 이 SA 를 써야 S3·STS 가 통과함
+      serviceAccountName: backend-sa
+
       containers:
         - name: document-analyzer
 
@@ -52,13 +55,6 @@ spec:
                   name: backend-secret
                   key: SPRING_DATASOURCE_PASSWORD
 
-<<<<<<< HEAD
-            - name: AWS_ACCESS_KEY_ID
-              valueFrom:
-                secretKeyRef:
-                  name: backend-secret
-                  key: AWS_ACCESS_KEY_ID
-=======
             # Gemini (백엔드와 동일 backend-secret 키 — 이력서 분석에 필수)
             - name: GOOGLE_API_KEY
               valueFrom:
@@ -70,13 +66,9 @@ spec:
             requests:
               memory: "512Mi"
               cpu: "500m"
->>>>>>> a3f58c4813eea5b504391f78249b6ca9dd5399f5
-
-            - name: AWS_SECRET_ACCESS_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: backend-secret
-                  key: AWS_SECRET_ACCESS_KEY
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
 
           readinessProbe:
             httpGet:
