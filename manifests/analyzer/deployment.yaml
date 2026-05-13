@@ -61,6 +61,18 @@ spec:
                   name: backend-secret
                   key: SPRING_DATASOURCE_PASSWORD
 
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: AWS_ACCESS_KEY_ID
+
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: AWS_SECRET_ACCESS_KEY
+
             # Gemini (백엔드와 동일 backend-secret 키 — 이력서 분석에 필수)
             - name: GOOGLE_API_KEY
               valueFrom:
