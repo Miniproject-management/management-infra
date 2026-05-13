@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/frontend:ae7c56e6bcde15e22c6a85929e710efa7be3c771
+          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/frontend:08f8c891cb4d8cbb13f23795934520279b334858
           ports:
             - containerPort: 80
           readinessProbe:
