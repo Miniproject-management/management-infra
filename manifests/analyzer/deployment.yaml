@@ -7,16 +7,10 @@ metadata:
 
 spec:
   replicas: 2
- 
+
   selector:
     matchLabels:
       app: document-analyzer
-
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
 
   template:
     metadata:
@@ -30,7 +24,7 @@ spec:
           image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/document-analyzer:latest
 
           ports:
-            - containerPort: 8000
+            - containerPort: 8080
 
           envFrom:
             - configMapRef:
@@ -46,12 +40,6 @@ spec:
                   name: backend-secret
                   key: S3_BUCKET_NAME
 
-            - name: DB_URL
-              valueFrom:
-                secretKeyRef:
-                  name: backend-secret
-                  key: SPRING_DATASOURCE_URL
-
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
@@ -64,25 +52,24 @@ spec:
                   name: backend-secret
                   key: SPRING_DATASOURCE_PASSWORD
 
-          resources:
-            requests:
-              memory: "512Mi"
-              cpu: "500m"
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: AWS_ACCESS_KEY_ID
 
-            limits:
-              memory: "1Gi"
-              cpu: "1000m"
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: AWS_SECRET_ACCESS_KEY
 
           readinessProbe:
             httpGet:
               path: /health
               port: 8080
-            initialDelaySeconds: 20
-            periodSeconds: 10
 
           livenessProbe:
             httpGet:
               path: /health
               port: 8080
-            initialDelaySeconds: 40
-            periodSeconds: 20
