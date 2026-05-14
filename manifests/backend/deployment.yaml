@@ -79,21 +79,6 @@ spec:
                   name: backend-secret
                   key: SPRING_DATASOURCE_PASSWORD
 
-          # actuator 준비 전까지 임시 제거 추천
-          # readinessProbe:
-          #   httpGet:
-          #     path: /actuator/health
-          #     port: 8080
-          #   initialDelaySeconds: 30
-          #   periodSeconds: 10
-
-          # livenessProbe:
-          #   httpGet:
-          #     path: /actuator/health
-          #     port: 8080
-          #   initialDelaySeconds: 60
-          #   periodSeconds: 30
-
           resources:
             requests:
               memory: "256Mi"

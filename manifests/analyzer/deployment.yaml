@@ -78,10 +78,10 @@ spec:
 
           readinessProbe:
             httpGet:
-              path: /health
+              path: /api/health
               port: 8080
 
           livenessProbe:
             httpGet:
-              path: /health
+              path: /api/health
               port: 8080
