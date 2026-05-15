@@ -4,7 +4,7 @@ metadata:
   name: backend-sa
   namespace: miniproject-management
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::804540872991:role/miniproject-management-backend-sa-role-2team
+    eks.amazonaws.com/role-arn: arn:aws:iam::804540872991:role/miniproject-management-yhj-backend-sa-role-2team
 
 ---
 apiVersion: apps/v1
@@ -36,7 +36,7 @@ spec:
 
       containers:
         - name: backend
-          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/backend:ae2b952aebef64b7ba5b06fcb1919e95e7c740f3
+          image: 804540872991.dkr.ecr.ap-southeast-2.amazonaws.com/miniproject-management-yhj/backend:ae2b952aebef64b7ba5b06fcb1919e95e7c740f3
           ports:
             - containerPort: 8080
 

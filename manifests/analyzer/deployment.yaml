@@ -24,7 +24,7 @@ spec:
       containers:
         - name: document-analyzer
 
-          image: 804540872991.dkr.ecr.ap-northeast-2.amazonaws.com/miniproject-management/document-analyzer:latest
+          image: 804540872991.dkr.ecr.ap-southeast-2.amazonaws.com/miniproject-management-yhj/document-analyzer:latest
 
           ports:
             - containerPort: 8080
@@ -35,7 +35,7 @@ spec:
 
           env:
             - name: AWS_REGION
-              value: ap-northeast-2
+              value: ap-southeast-2
 
             - name: S3_BUCKET_NAME
               valueFrom:
