@@ -33,3 +33,11 @@ spec:
                 name: backend-service
                 port:
                   number: 8080
+
+          - path: /api/hr
+            pathType: Prefix
+            backend:
+              service:
+                name: document-analyzer-service
+                port:
+                  number: 8080
